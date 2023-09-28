@@ -160,7 +160,164 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+        slide.classList.add('active');
+        }
+    });
+    }
+
+    function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+    }
+
+    // Add event listeners for next and previous buttons
+    const nextButton = document.getElementById('nextButton'); // Assuming you have next and previous buttons
+    const prevButton = document.getElementById('prevButton');
+
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+
+    // Show the first slide initially
+    showSlide(currentIndex);
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
+/* 
+    function openPopup() {
+    popup.style.display = 'block';
+    }
+
+    function closePopup() {
+    popup.style.display = 'none';
+    }
+
+    openPopupButton.addEventListener('click', openPopup);
+    closePopupButton.addEventListener('click', closePopup);
+
+    window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        closePopup();
+    }
+
+
+});
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // const downCrtElement = document.querySelector('.downCrt');
+    // const priceElement = document.querySelector('#price');
+    // const totalElement = document.querySelector('#totale');
+
+
+ // function toggleCartElements() {
+    //     if (parseInt(cartCounter.textContent) === 0) {
+    //         emptyCartElement.style.display = 'block';
+    //         // downCrtElement.style.display = 'none';
+    //     } else {
+    //         emptyCartElement.style.display = 'none';
+    //         // downCrtElement.style.display = 'block';
+    //     }
+    // }
+
+
+ // function updateItemBreakdown() {
+    //     const totalElement = document.querySelector('#totale');
+    //     const itemPrice = productItem.price;
+    //     const quantity = parseInt(cartCounter.textContent);
+    //     const totalPrice = itemPrice * quantity;
+    //     totalElement.textContent = '$' + totalPrice.toFixed(2);
+    // }
 
 
 
