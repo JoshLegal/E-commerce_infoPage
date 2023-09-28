@@ -22,6 +22,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
+
     const decreaseButton = document.querySelector('#btn-decrease');
     const increaseButton = document.querySelector('#btn-increase');
     const cartCounter = document.querySelector('#counter');
@@ -122,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
    
 
+    
+
     deleteButton.addEventListener('click', remove);
 
     /**side navigation toggle**/
@@ -141,24 +144,6 @@ document.addEventListener('DOMContentLoaded', function () {
     closeMenuBar.addEventListener('click', closeNav);
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* const popupQuerySelector = ".show";
