@@ -212,7 +212,11 @@ section{width:max(80%); margin: 4rem auto;display: grid; grid-template-columns: 
     display: block;
     justify-content: center;
     text-align: center;
-    padding: 5rem;
+    
+}
+
+.empty{
+    padding: 4rem;
 }
 
 .grid{
