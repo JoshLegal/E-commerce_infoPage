@@ -159,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;
 
@@ -195,6 +196,128 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+
+
+
+
+
+
+
+
+/* 
+    function openPopup() {
+    popup.style.display = 'block';
+    }
+
+    function closePopup() {
+    popup.style.display = 'none';
+    }
+
+    openPopupButton.addEventListener('click', openPopup);
+    closePopupButton.addEventListener('click', closePopup);
+
+    window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        closePopup();
+    }
+
+
+});
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // const downCrtElement = document.querySelector('.downCrt');
+    // const priceElement = document.querySelector('#price');
+    // const totalElement = document.querySelector('#totale');
+
+
+ // function toggleCartElements() {
+    //     if (parseInt(cartCounter.textContent) === 0) {
+    //         emptyCartElement.style.display = 'block';
+    //         // downCrtElement.style.display = 'none';
+    //     } else {
+    //         emptyCartElement.style.display = 'none';
+    //         // downCrtElement.style.display = 'block';
+    //     }
+    // }
+
+
+ // function updateItemBreakdown() {
+    //     const totalElement = document.querySelector('#totale');
+    //     const itemPrice = productItem.price;
+    //     const quantity = parseInt(cartCounter.textContent);
+    //     const totalPrice = itemPrice * quantity;
+    //     totalElement.textContent = '$' + totalPrice.toFixed(2);
+    // }
 
 
 
