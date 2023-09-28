@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // cartLi.addEventListener('click', function () {
     //     cartShow.classList.toggle('active');
     // });
-   
+  
 
     deleteButton.addEventListener('click', remove);
 
@@ -131,6 +131,9 @@ document.addEventListener('DOMContentLoaded', function () {
     closeMenuBar.addEventListener('click', closeNav);
 
 });
+
+
+
 
 /* const popupQuerySelector = ".show";
     document.addEventListener('click', (e) => {

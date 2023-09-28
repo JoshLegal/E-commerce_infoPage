@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!--Stylesheet import-->
+  <link rel="stylesheet" href="index.css">
+  
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header>
+    <nav id="navBar" class="nav-bar">
+      <span>
+        <img id="menu-bar" class="" src="images/icon-menu.svg" alt="menu-bar">
+      </span>
+      <div class="side-nav">
+        <ul class="aside">
+        <li><img id="close-btn" src="images/icon-close.svg" alt="close-btn"/></li>
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+        </ul>
+      </div>
+
+      <span>
+        <img src="images/logo.svg" alt="logo">
+      </span>
+
+      <ul class="menu">
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+
+      <span class="left-nav">
+        <span id="cart" class="cartsup" style="list-style: none;">  <!--so i want this to have an event listener that listens when it is being clicked and display div class show and when clicked again hides it -->
+          <img src="images/icon-cart.svg" alt="cart_logo">
+          <span id="sup" style="vertical-align: super;background-color: hsl(26, 100%, 55%); color: white; padding: 0 6px;border-radius: 10px;">0</span> <!--so i want this #sup to update its value based on the value in #counter-->
+        </span>
+        
+        <!-- <img src="images/icon-cart.svg" alt="cart_logo"> -->
+        <!-- <span class="hide">
+          <h5>Cart</h5>
+          <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail_1">
+          <span class="cart-text">
+            Fall Limited Edition Sneakers 
+            <span id="item-brkdn">$125.00 x 3 <span id="total">$375.00</span></span> 
+            <span><img src="images/icon-delete.svg" alt="delete-icon"></span>
+          </span>
+        </span> -->
+        <img class="avatar" src="images/image-avatar.png" alt="avatar">
+      </span>
+
+      <div class="hide show">
+        <h3 class="cart-hdr">Cart</h3>
+        <span class="emptyCart">Your cart is empty</span> <!--so i want this to display when the value in #counter == 0 -->
+        <!-- <div class="downCrt"> 
+            <span class="grid">
+                <span><img class="cart-img" src="images/image-product-1-thumbnail.jpg" alt="thumbnail_1"></span>
+                <span class="cart-text">
+                    <span>Fall Limited Edition Sneakers</span> 
+                    <span><span id="itembrkdn">$<span id="price">125</span>.00<span>x</span><span id="Qtty">0</span></span> <span id="totale">$375.00</span></span>
+                </span>
+                <span id="del-btn"><img src="images/icon-delete.svg" alt="delete-icon"></span>
+            </span>
+            <button id="checkout" class="btn-cart">Checkout</button>
+        </div> -->
+      </div>
+
+    </nav>
+  </header>
+
+  <section>
+    <div class="product-img">
+      <div class="slideshow">
+
+        <img class="images" src="images/image-product-1.jpg" alt="product_1">
+        <!-- <img class="images" src="images/image-product-2.jpg" alt="product_2">
+        <img class="images" src="images/image-product-3.jpg" alt="product_3">
+        <img class="images" src="images/image-product-4.jpg" alt="product_4"> -->
+  
+      </div>
+
+      <div class="thumbnails">
+  
+        <img src="images/image-product-1-thumbnail.jpg" alt="product_1_thumbnail">
+        <img src="images/image-product-2-thumbnail.jpg" alt="product_1_thumbnail">
+        <img src="images/image-product-3-thumbnail.jpg" alt="product_1_thumbnail">
+        <img src="images/image-product-4-thumbnail.jpg" alt="product_1_thumbnail">
+  
+      </div>
+    </div>
+    
+
+    <div class="container">
+      <div class="content-text">
+
+        <h5>SNEAKER COMPANY</h5>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+  
+      </div>
+  
+      <div class="pricing">
+  
+        <span class="pay">$125.00</span> <span class="pay1">50%</span> 
+  
+      </div>
+
+      <div class="cancelled-price">
+        <span class="pay2"><del>$250.00</del></span>
+      </div>
+  
+      <div class="buttons">
+        <span class="counter-btn">
+  
+          <button id="btn-decrease"><img src="images/icon-minus.svg" alt="minus-btn"></button>
+          <span id="counter">0</span>
+          <button id="btn-increase"><img src="images/icon-plus.svg" alt="plus-btn"></button>
+          
+        </span>
+        <!-- <span class="sub-btn"> -->
+  
+          <button id="cart-btn" type="submit">
+            <span><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#ffffff" fill-rule="nonzero"/></svg></span>
+            <span>Add to cart</span>
+          </button>
+  
+        <!-- </span> -->
+      </div>
+    </div>
+    
+  </section>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+   <!--javascript import-->
+   <script src="index.js"></script>
+</body>
+</html>
