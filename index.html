@@ -52,33 +52,16 @@
           <span id="sup" style="vertical-align: super;background-color: hsl(26, 100%, 55%); color: white; padding: 0 6px;border-radius: 10px;">0</span> <!--so i want this #sup to update its value based on the value in #counter-->
         </span>
         
-        <!-- <img src="images/icon-cart.svg" alt="cart_logo"> -->
-        <!-- <span class="hide">
-          <h5>Cart</h5>
-          <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail_1">
-          <span class="cart-text">
-            Fall Limited Edition Sneakers 
-            <span id="item-brkdn">$125.00 x 3 <span id="total">$375.00</span></span> 
-            <span><img src="images/icon-delete.svg" alt="delete-icon"></span>
-          </span>
-        </span> -->
+        
         <img class="avatar" src="images/image-avatar.png" alt="avatar">
       </span>
 
-      <div class="hide show">
+      <div id="cart-popUp" class="hide show">
         <h3 class="cart-hdr">Cart</h3>
-        <span class="emptyCart">Your cart is empty</span> <!--so i want this to display when the value in #counter == 0 -->
-        <!-- <div class="downCrt"> 
-            <span class="grid">
-                <span><img class="cart-img" src="images/image-product-1-thumbnail.jpg" alt="thumbnail_1"></span>
-                <span class="cart-text">
-                    <span>Fall Limited Edition Sneakers</span> 
-                    <span><span id="itembrkdn">$<span id="price">125</span>.00<span>x</span><span id="Qtty">0</span></span> <span id="totale">$375.00</span></span>
-                </span>
-                <span id="del-btn"><img src="images/icon-delete.svg" alt="delete-icon"></span>
-            </span>
-            <button id="checkout" class="btn-cart">Checkout</button>
-        </div> -->
+        <div class="emptyCart">
+            <p class="empty">Your cart is empty</p>
+        </div> <!--so i want this to display when the value in #counter == 0 -->
+        
       </div>
 
     </nav>
@@ -156,3 +139,26 @@
    <script src="index.js"></script>
 </body>
 </html>
+
+<!-- <img src="images/icon-cart.svg" alt="cart_logo"> -->
+        <!-- <span class="hide">
+          <h5>Cart</h5>
+          <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail_1">
+          <span class="cart-text">
+            Fall Limited Edition Sneakers 
+            <span id="item-brkdn">$125.00 x 3 <span id="total">$375.00</span></span> 
+            <span><img src="images/icon-delete.svg" alt="delete-icon"></span>
+          </span>
+        </span> -->
+
+  <!-- <div class="downCrt"> 
+            <span class="grid">
+                <span><img class="cart-img" src="images/image-product-1-thumbnail.jpg" alt="thumbnail_1"></span>
+                <span class="cart-text">
+                    <span>Fall Limited Edition Sneakers</span> 
+                    <span><span id="itembrkdn">$<span id="price">125</span>.00<span>x</span><span id="Qtty">0</span></span> <span id="totale">$375.00</span></span>
+                </span>
+                <span id="del-btn"><img src="images/icon-delete.svg" alt="delete-icon"></span>
+            </span>
+            <button id="checkout" class="btn-cart">Checkout</button>
+        </div> -->
