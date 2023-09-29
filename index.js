@@ -156,8 +156,106 @@ document.addEventListener('DOMContentLoaded', function () {
 
     menuBar.addEventListener('click', openNav);
     closeMenuBar.addEventListener('click', closeNav);
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//    //////////////////////   Cart Functions ///////////////////////////////////////////////////////////
+    // Get references to the popup and close button
 
+    const popup = document.getElementById("popup");
+    const showPopupButton = document.getElementById("showPopupButton");
+    const closePopup = document.getElementById("closePopup");
 
+    // Function to show the popup
+    function showPopup() {
+        popup.style.display = "block";
+    }
+
+    // Function to hide the popup
+    function hidePopup() {
+        popup.style.display = "none";
+    }
+
+    // Show the popup when the button is clicked
+    showPopupButton.addEventListener("click", showPopup);
+
+    // Hide the popup when the close button is clicked
+    closePopup.addEventListener("click", hidePopup);
+
+    // Hide the popup when the background overlay is clicked
+    popup.addEventListener("click", (event) => {
+        if (event.target === popup) {
+            hidePopup();
+        }
+    });
+
+    // Prevent clicks inside the popup from closing it
+    popup.querySelector(".popup-content").addEventListener("click", (event) => {
+        event.stopPropagation();
+    });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    const popUpSlide = document.querySelectorAll('.popup-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentPos = 0;
+
+    function showSlides(index) {
+    popUpSlide.forEach((slide, i) => {
+        slide.classList.remove('active');
+        indicators[i].classList.remove('active');
+        if (i === index) {
+        slide.classList.add('active');
+        indicators[i].classList.add('active');
+        }
+    });
+    }
+
+    function goToSlides(index) {
+    currentPos = index;
+    showSlides(currentIndex);
+    }
+
+    // Add event listeners for indicators
+    indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+        goToSlides(index);
+    });
+    });
+
+    // Add event listeners for next and previous buttons (if not already added)
+    const popUpNextButton = document.querySelector('#popUpNextButton');
+    const popUpPrevButton = document.querySelector('#popUpPrevButton');
+
+    popUpNextButton.addEventListener('click', () => {
+    currentPos = (currentPos + 1) % slides.length;
+    showSlides(currentPos);
+    });
+
+    popUpPrevButton.addEventListener('click', () => {
+    currentPos = (currentPos - 1 + slides.length) % slides.length;
+    showSlides(currentPos);
+    });
+
+    // Show the first slide initially
+    showSlides(currentPos);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*+
+const slideShowPop = document.querySelector('#slideshow-popUp')
+slideShowPop.addEventListener('click', () => {
+    const carousel = document.querySelector("#carousel")
+    if (carousel){
+    carousel.classList.remove('hide')
+    carousel.classList.add('carousel')
+    }else if(carousel.getattribute('class', 'carousel')){
+        carousel.classList.remove('carousel')
+        carousel.classList.add('hide')
+    }
+        
+})*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////slideSHOW/////////////////////////////////////////////////////////////////////////
 
     const slides = document.querySelectorAll('.slide');
     let currentIndex = 0;

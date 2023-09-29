@@ -69,18 +69,45 @@
 
   <section>
     <div class="product-img">
-      <div class="slideshow">
-
-        <img class="images slides" src="images/image-product-1.jpg" alt="product_1">
-        <div class="carousel">
+      <div class="slideshow" id="slide-container">
+        <!-- <img class="images slides" src="images/image-product-1.jpg" alt="product_1"> -->
+        <div id="showPopupButton" class="carousel">
           <div class="slide"><img class="images" src="images/image-product-1.jpg" alt="product_1"></div>
           <div class="slide"><img class="images" src="images/image-product-2.jpg" alt="product_2"></div>
           <div class="slide"><img class="images" src="images/image-product-3.jpg" alt="product_3"></div>
           <div class="slide"><img class="images" src="images/image-product-4.jpg" alt="product_4"></div>
-          
         </div>        
-        <button id="prevButton" class=""><img src="images/icon-previous.svg" alt="previCon"></button>
-          <button id="nextButton" class=""><img src="images/icon-next.svg" alt="nextiCon"></button>
+        <button id="prevButton" class="slide-btn"><img src="images/icon-previous.svg" alt="previCon"></button>
+        <button id="nextButton" class="slide-btn"><img src="images/icon-next.svg" alt="nextiCon"></button>
+      </div>
+<!------------------------------------------------------------------------------------------------------------------------------->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup"><img src="images/icon-close.svg" alt="close-button"></span>
+            <div class="popup-carousel">
+              <div class="popup-slide"><img class="pop-image" src="images/image-product-1.jpg" alt="product_1"></div>
+              <div class="popup-slide"><img class="pop-image" src="images/image-product-2.jpg" alt="product_2"></div>
+              <div class="popup-slide"><img class="pop-image" src="images/image-product-3.jpg" alt="product_3"></div>
+              <div class="popup-slide"><img class="pop-image" src="images/image-product-4.jpg" alt="product_4"></div>
+            </div> 
+
+            <div class="indicators">
+              <span class="indicator active">
+                <img class="ind-img" src="images/image-product-1-thumbnail.jpg" alt="product_1_thumbnail">
+              </span>
+              <span class="indicator">
+                <img class="ind-img" src="images/image-product-2-thumbnail.jpg" alt="product_1_thumbnail">
+              </span>
+              <span class="indicator">
+                <img class="ind-img" src="images/image-product-3-thumbnail.jpg" alt="product_1_thumbnail">
+              </span>
+              <span class="indicator">
+                <img class="ind-img" src="images/image-product-4-thumbnail.jpg" alt="product_1_thumbnail">
+              </span>
+            </div>
+            <button id="popUpPrevButton" ><img src="images/icon-previous.svg" alt="previCon"></button>
+            <button id="popUpNextButton" ><img src="images/icon-next.svg" alt="nextiCon"></button>
+        </div>
       </div>
 
       <div class="thumbnails">
@@ -134,6 +161,16 @@
     </div>
     
   </section>
+  <div id="carousel" class="hide">
+    <div class="slider-ctn">
+      <div class="slide"><img class="slide-img" src="images/image-product-1.jpg" alt="product_1"></div>
+      <div class="slide"><img class="slide-img" src="images/image-product-2.jpg" alt="product_2"></div>
+      <div class="slide"><img class="slide-img" src="images/image-product-3.jpg" alt="product_3"></div>
+      <div class="slide"><img class="slide-img" src="images/image-product-4.jpg" alt="product_4"></div>
+    </div>
+    <button id="prevButton" class="slide-btn1"><img src="images/icon-previous.svg" alt="previCon"></button>
+    <button id="nextButton" class="slide-btn2"><img src="images/icon-next.svg" alt="nextiCon"></button>
+  </div>  
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

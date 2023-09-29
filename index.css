@@ -81,13 +81,14 @@ ul>li:hover {
 .left-nav{display: flex; flex: 1 1; justify-content: flex-end; align-items: center;}
 .avatar{width: max(40px);margin-left: 1em; border: 1.5px solid hsl(26, 100%, 55%);border-radius: 50%;cursor: pointer;}
 
-section{width:max(80%); margin: 4rem auto;display: grid; grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));row-gap: 1rem;}
+section{width:max(80%); margin: 2.5rem auto;display: grid; grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));row-gap: 1rem;}
 
-.product-img{display: flex; flex-direction: column;gap: 2rem; padding: 1.5rem; justify-content: space-around;}
+.product-img{display: grid; grid-template-rows: max-content;gap: 2rem; padding-block: 1.5rem; place-items: center; width: fit-content;}
 
 .thumbnails{
-    display: grid; grid-gap: 35px; justify-items: center;
-    grid-template-columns: repeat(auto-fit,minmax(90px, 1fr));
+    display: grid; justify-items: center; justify-content: space-between;
+    grid-template-columns: repeat(auto-fit,minmax(50px, 1fr));
+    width: 90%;
 }
 
 .thumbnails > img {
@@ -99,7 +100,7 @@ section{width:max(80%); margin: 4rem auto;display: grid; grid-template-columns: 
 .images{width: 100%;border-radius: 15px;}
 
 .container{
-    display: grid; padding: 4.2vw 2.2vw;
+    display: grid; padding-block: 4.2vw;
     width: fit-content;
     grid-template-rows: 1fr 40px 60px;
 }
@@ -292,23 +293,141 @@ section{width:max(80%); margin: 4rem auto;display: grid; grid-template-columns: 
 }
 
 /* slideshow */
-  .carousel {
+.slideshow{
+    width: 90%;
+}
+.carousel{
     display: flex;
     overflow: hidden;
     width: 100%;
-    height: 300px; /* Adjust as needed */
-  }
-  
-  .slide {
+    position: relative;
+    
+        /* Adjust as needed */
+}
+
+.slide{
     flex: 0 0 100%;
     display: none;
-    transition: opacity 0.5s; 
-  }
-  
-  .slide.active {
+}
+
+.slide.active {
     display: block;
-    opacity: 1;
-  }
+    width: 90%;
+}
+
+.slide-btn{
+    position: absolute;
+}
+
+#nextButton{
+    top: 50%;
+    right: 0;
+}
+#prevButton{
+    top: 50%;
+    left: 0;
+}
+/****************************************************************************************************/
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.popup-content {
+    position: relative;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: #fff; */
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    height: 480px;
+    display: flex; flex-direction: column;gap: 5px;
+}
+
+.close {
+    /* position: absolute;
+    top: 0;
+    right: 20px; */
+    padding: 5px;
+    width: fit-content;
+    justify-self: end;
+    cursor: pointer;
+
+}
+/****************************************************************************************************/
+.popup-carousel{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    overflow: hidden;
+}
+.popup-slide{
+    width: 90%;
+    flex: 0 0 100%;
+    
+}
+.pop-image{
+    width: 400px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+#popUpNextButton,
+#popUpPrevButton{
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    width: 50px;
+    border: none;
+    background-color: var(--Light-grayish-blue);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+#popUpNextButton{right: 0;}
+#popUpPrevButton{left:0;}
+/****************************************************************************************************/
+.indicators {
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+    margin-top: 10px; /* Adjust spacing as needed */
+}
+  
+.indicator {
+    height: 10px;
+    background-color: #bbb; /* Inactive indicator color */
+    border-radius: 50%;
+    margin: 0 5px; /* Adjust spacing between indicators */
+    cursor: pointer;
+}
+  
+.indicator.active {
+    background-color: #333; /* Active indicator color */
+}
+
+.ind-img{
+    width: 70px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
   
   
 @media screen and (max-height: 450px) {
