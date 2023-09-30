@@ -126,7 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
         updateItemBreakdown();
         updateItemBreakdown();
     });
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////  CART POPUP  ////////////////////////////////////////////////////////
     function closePopUp(){
         cartShow.classList.remove('active')
     }
@@ -141,8 +143,29 @@ document.addEventListener('DOMContentLoaded', function () {
             closePopUp();
     }})
 
-    /**side navigation toggle**/
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////  PROFILE POPUP  ////////////////////////////////////////////////////////
+    const dropDown = document.querySelector('#drop-down')
+    const dropDownProfile = document.querySelector('#dropDownProfile')
 
+    function closeDropDown(){
+        dropDown.classList.remove('active')
+    }
+
+    dropDownProfile.addEventListener('click', function (){
+        dropDown.classList.toggle('active')
+        
+    } );
+    // const body = document.querySelector('body')
+    // window.addEventListener('click', (event) => {
+    //     if (event.target === body) {
+    //         closePopUp();
+    // }})
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /**side navigation toggle**/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     function openNav() {
         document.querySelector(".side-nav").style.width = "250px";
     }
@@ -156,10 +179,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     menuBar.addEventListener('click', openNav);
     closeMenuBar.addEventListener('click', closeNav);
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//    //////////////////////   Cart Functions ///////////////////////////////////////////////////////////
-    // Get references to the popup and close button
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////   Cart Functions ///////////////////////////////////////////////////////////
 
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////Mobile SlideSHOW/////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+        slide.classList.add('active');
+        }
+    });
+    }
+
+    function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+    }
+
+    // Add event listeners for next and previous buttons
+    const nextButton = document.getElementById('nextButton');
+    const prevButton = document.getElementById('prevButton');
+
+    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', prevSlide);
+
+    // Show the first slide initially
+    showSlide(currentIndex);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////// Get references to the popup and close button ////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const popup = document.getElementById("popup");
     const showPopupButton = document.getElementById("showPopupButton");
     const closePopup = document.getElementById("closePopup");
@@ -191,52 +256,55 @@ document.addEventListener('DOMContentLoaded', function () {
     popup.querySelector(".popup-content").addEventListener("click", (event) => {
         event.stopPropagation();
     });
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    const popUpSlide = document.querySelectorAll('.popup-slide');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////// DESKTOP SlideSHOW /////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    const popSlide = document.querySelectorAll('.popup-slide');
     const indicators = document.querySelectorAll('.indicator');
     let currentPos = 0;
 
     function showSlides(index) {
-    popUpSlide.forEach((slide, i) => {
-        slide.classList.remove('active');
-        indicators[i].classList.remove('active');
-        if (i === index) {
-        slide.classList.add('active');
-        indicators[i].classList.add('active');
-        }
-    });
+        popSlide.forEach((slide, i) => {
+            slide.classList.remove('active');
+            indicators[i].classList.remove('active');
+            if (i === index) {
+                slide.classList.add('active');
+                indicators[i].classList.add('active');
+            }
+        });
     }
 
     function goToSlides(index) {
-    currentPos = index;
-    showSlides(currentIndex);
+        currentPos = index;
+        showSlides(currentPos);
     }
 
     // Add event listeners for indicators
     indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
-        goToSlides(index);
-    });
+        indicator.addEventListener('click', () => {
+            goToSlides(index);
+        });
     });
 
     // Add event listeners for next and previous buttons (if not already added)
-    const popUpNextButton = document.querySelector('#popUpNextButton');
-    const popUpPrevButton = document.querySelector('#popUpPrevButton');
+    const popNextButton = document.querySelector('#popUpNextButton');
+    const popPrevButton = document.querySelector('#popUpPrevButton');
 
-    popUpNextButton.addEventListener('click', () => {
-    currentPos = (currentPos + 1) % slides.length;
-    showSlides(currentPos);
+    popNextButton.addEventListener('click', () => {
+        currentPos = (currentPos + 1) % popSlide.length;
+        showSlides(currentPos);
     });
 
-    popUpPrevButton.addEventListener('click', () => {
-    currentPos = (currentPos - 1 + slides.length) % slides.length;
-    showSlides(currentPos);
+    popPrevButton.addEventListener('click', () => {
+        currentPos = (currentPos - 1 + popSlide.length) % popSlide.length;
+        showSlides(currentPos);
     });
 
     // Show the first slide initially
     showSlides(currentPos);
+
+
+    
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -254,49 +322,152 @@ slideShowPop.addEventListener('click', () => {
         
 })*/
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////slideSHOW/////////////////////////////////////////////////////////////////////////
 
 
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
+    
 
-    function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-        slide.classList.add('active');
-        }
-    });
-    }
-
-    function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-    }
-
-    function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-    }
-
-    // Add event listeners for next and previous buttons
-    const nextButton = document.getElementById('nextButton'); // Assuming you have next and previous buttons
-    const prevButton = document.getElementById('prevButton');
-
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-
-    // Show the first slide initially
-    showSlide(currentIndex);
-
-
-
-
+    
 });
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const popSlide = document.querySelectorAll('.popup-slide');
+    // const indicators = document.querySelectorAll('.indicator');
+    // let currentPos = 0;
+
+    // function showSlides(index) {
+    //     popSlide.forEach((slide, i) => {
+    //         slide.classList.remove('active');
+    //         indicators[i].classList.remove('active');
+    //         if (i === index) {
+    //         slide.classList.add('active');
+    //         indicators[i].classList.add('active');
+    //         }
+    //     });
+    // }
+
+    // function goToSlides(index) {
+    //     currentPos = index;
+    //     showSlides(currentPos);
+    // }
+
+    // // Add event listeners for indicators
+    // indicators.forEach((indicator, index) => {
+    //     indicator.addEventListener('click', () => {
+    //         goToSlides(index);
+    //     });
+    // });
+
+    // // Add event listeners for next and previous buttons (if not already added)
+    // const popNextButton = document.querySelector('#popUpNextButton');
+    // const popPrevButton = document.querySelector('#popUpPrevButton');
+
+    // popNextButton.addEventListener('click', () => {
+    // currentPos = (currentPos + 1) % popSlide.length;
+    // showSlides(currentPos);
+    // });
+
+    // popPrevButton.addEventListener('click', () => {
+    // currentPos = (currentPos - 1 + popSlide.length) % popSlide.length;
+    // showSlides(currentPos);
+    // });
+
+    // // Show the first slide initially
+    // showSlides(currentPos);
+
+
+
+
+// const slides = document.querySelectorAll('.slide');
+    // let currentIndex = 0;
+
+    // function showSlide(index) {
+    // slides.forEach((slide, i) => {
+    //     slide.classList.remove('active');
+    //     if (i === index) {
+    //     slide.classList.add('active');
+    //     }
+    // });
+    // }
+
+    // function nextSlide() {
+    // currentIndex = (currentIndex + 1) % slides.length;
+    // showSlide(currentIndex);
+    // }
+
+    // function prevSlide() {
+    // currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    // showSlide(currentIndex);
+    // }
+
+    // // Add event listeners for next and previous buttons
+    // const nextButton = document.getElementById('nextButton'); // Assuming you have next and previous buttons
+    // const prevButton = document.getElementById('prevButton');
+
+    // nextButton.addEventListener('click', nextSlide);
+    // prevButton.addEventListener('click', prevSlide);
+
+    // // Show the first slide initially
+    // showSlide(currentIndex);
 
 
 
