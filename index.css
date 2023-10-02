@@ -181,8 +181,11 @@ text {
     background-color: orange;
 }
 
-.drop-down{
+.hide{
     display: none;
+}
+
+.drop-down{
     flex-direction: column ;
     gap: 1rem;
     width: 150px;
@@ -206,9 +209,9 @@ text {
     width: 150px;
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.5) 0em 2rem 8rem 0em;
-    top: 5.5rem;
+    top: 4.5rem;
     transition: .5s ease-in-out;
-    visibility: visible;
+    /* visibility: visible; */
     -webkit-transition: .5s ease-in-out;
     -moz-transition: .5s ease-in-out;
     -ms-transition: .5s ease-in-out;
@@ -386,6 +389,7 @@ hr {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
+    display: none;
 }
 
 #nextButton{
@@ -535,6 +539,6 @@ hr {
     #menu-bar{display: inline-block}
     .thumbnails{display: none;}
     .slideshow{width: 100%;}
-
+    .slide-btn{ display: block;}
 
 }
