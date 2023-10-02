@@ -389,6 +389,7 @@ hr {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     border-radius: 50%;
+    display: none;
 }
 
 #nextButton{
@@ -538,6 +539,6 @@ hr {
     #menu-bar{display: inline-block}
     .thumbnails{display: none;}
     .slideshow{width: 100%;}
-
+    .slide-btn{ display: block;}
 
 }
